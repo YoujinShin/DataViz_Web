@@ -1,0 +1,11 @@
+
+
+
+	* { padding: 0; margin: 0; }
+	body { overflow-y: hidden; overflow-x: scroll; }
+
+	#filler { position: absolute; top: 0; left: 0; width: 3900px; height: 100%; }
+	#container { width: 4500px; position: absolute; top: 30%; margin-top: -150px; }
+
+	.clear { clear: both; }
+	
