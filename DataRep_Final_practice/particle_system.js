@@ -61,7 +61,7 @@ ParticleSystem.prototype.render_axis = function() {
 	else if(this.index == 4) {st = '45'}
 	else if(this.index == 5) {st = '55'}
 	else if(this.index == 6) {st = '65'}
-	else if(this.index == 7) {st = '75 years old'}
+	else if(this.index == 7) {st = '75 YEARS OLD'}
 
 	pushMatrix();
 		translate(this.pos_axis.x, this.pos_axis.y);
@@ -70,7 +70,7 @@ ParticleSystem.prototype.render_axis = function() {
 		line(0, 170,0, - 70);
 
 		fill(160);
-		textSize(18);
+		textSize(15);
 		text(st, 4, 170);
 	popMatrix();
 }
@@ -88,17 +88,17 @@ ParticleSystem.prototype.check_selected = function() {
 
 ParticleSystem.prototype.render_selected = function() {
 	var st;
-	if(this.index == 0) {st = 'Due to her parents divorce, 10 year old girl commits suicide 2009.04.08'}
-	else if(this.index == 1) {st = 'After his teacher punished him 110 times, high school student commits suicide 2009.05.02'}
-	else if(this.index == 2) {st = 'Storm in South Korea over Jang Ja-yeon suicide 2009.03.07'}
-	else if(this.index == 3) {st = 'Suicide is the number one reason for deaths'}
-	else if(this.index == 4) {st = 'Record the most suicide rates after the Subprime mortgage crisis'}
-	else if(this.index == 5) {st = 'Former S. Korean President Roh commits suicide. He was 62.'}
-	else if(this.index == 6) {st = 'Elderly suicide rates increase evey year'}
-	else if(this.index == 7) {st = 'Korea, Highest in Elderly Poverty: OECD'}
+	if(this.index == 0) {st = 'DUE TO HER PARENTS DIVORCE, 10 YEAR OLD GIRL COMMITS SUICIDE 2009.04.08'}
+	else if(this.index == 1) {st = 'AFTER HIS TEACHER PUNISHED HIM 110 TIMES, HIGH SCHOOL STUDENT COMMITS SUICIDE 2009.05.02'}
+	else if(this.index == 2) {st = 'STORM IN SOUTH KOREA OVER JANG JA-YEON SUICIDE 2009.03.07'}
+	else if(this.index == 3) {st = 'SUICIDE IS THE NUMBER ONE REASON FOR DEATHS'}
+	else if(this.index == 4) {st = 'RECORD THE MOST SUICIDE RATES AFTER THE SUBPRIME MORTGAGE CRISIS'}
+	else if(this.index == 5) {st = 'FORMER S. KOREAN PRESIDENT ROH COMMITS SUICIDE. HE WAS 62.'}
+	else if(this.index == 6) {st = 'ELDERLY SUICIDE RATES INCREASE EVEY YEAR'}
+	else if(this.index == 7) {st = 'KOREA, HIGHEST IN ELDERLY POVERTY: OECD'}
 
-	textSize(26);
-	fill(255, 200);
+	textSize(20);
+	fill(255);
 	text(this.num, width*0.1, height*0.31);
 	text(st, width*0.17, height*0.31);
 }

@@ -2,53 +2,41 @@
 <html>
 <head>
   <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
-  <!-- <link rel="stylesheet" href="../css/cartodb.css" /> -->
   <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
-<!--   
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
- -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-  <!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.ie.css" />
-  <![endif]-->
+
   <style>
     html, body {width:100%; height:100%; padding: 0; margin: 0;}
-    #cartodb-map { width: 100%; height:100%; background: black;}
+    #cartodb-map { width: 100%; height:100%; } /*//background: black;*/
     h1 {
-        position: absolute; left: 28px; top: 5px; z-index: 10;
-        font-family: 'Open Sans', sans-serif; font-size: 74px; color: white;opacity: 1;
+        position: absolute; left: 40px; top: 70px; z-index: 10;
+        font-family: 'Open Sans', sans-serif; font-size: 42px; color: rgba(255, 255, 255, 0.3);
       }
+    p {
+        position: absolute; left: 40px; top: 400px; padding: 20px;
+        background-color: rgba(255, 255, 255, 0.35); font-family: 'Open Sans', sans-serif; font-size: 18px;
+      }
+    .cartodb-timeslider {background:rgba(0, 0, 0, 0.0) !important; display:none !important;}
+/*    .cartodb-timeslider ul li {border-right:0px !important;}
+    .cartodb-timeslider p {display:none !important;}*/
   </style>
 
   <script>
     var map;
     function init(){
-      // initiate leaflet map
       map = new L.Map('cartodb-map', { 
-        center: [40.745480, -73.991337],
+        center: [40.745480 - 0.01, -73.991337 - 0.04],
         zoom: 13,
         zoomControl: false
-        // time_slider: false
       })
-
-      //console.log();
 
       L.tileLayer('https://dnv9my2eseobd.cloudfront.net/v3/cartodb.map-4xtxp73f/{z}/{x}/{y}.png', {
         attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
       }).addTo(map);
 
       // open path 
-      var layerUrl = 'http://youjin.cartodb.com/api/v2/viz/2526e8c6-a4a8-11e3-a5c2-0e230854a1cb/viz.json'; // dynamic
-      
-      // var layerUrl = 'http://youjin.cartodb.com/api/v2/viz/106eea7e-a4c5-11e3-9746-0e230854a1cb/viz.json'; // static
-
-      // var subLayerOptions = {
-      //   sql: "SELECT * FROM openpaths_meggonagul",
-      //   cartocss: "#openpaths_meggonagul{marker-fill: #109DCD;}"
-      // }
-
-      // document.getElementById("div.cartodb-timeslider").display= "none";
-      document.getElementsByClassName('div.cartodb-timeslider').display = 'none';
+      // var layerUrl = 'http://youjin.cartodb.com/api/v2/viz/2526e8c6-a4a8-11e3-a5c2-0e230854a1cb/viz.json';  
+      var layerUrl = 'http://youjin.cartodb.com/api/v2/viz/92df79f2-abae-11e3-8556-0edbca4b5057/viz.json';    
 
       cartodb.createLayer(map, layerUrl)
         .addTo(map)
@@ -57,15 +45,23 @@
         }).on('error', function() {
           //log the error
         });
-
-        // $(".slider").css("display","none");
     }  
-
   </script>
 </head>
 
 <body onload="init()">
-  <h1>New York</h1>
+
+  <!-- <h1><img src="pushforfame.png" width="100"> PUSH FOR FAME</h1> -->
+  <h1><img src="bunny.jpg" width="420"></h1>
   <div id='cartodb-map'></div>
+  <p>
+        #Pushforfame <br>
+        Hi, I am Pushforfame.  <br>
+        I am a video installation live on street. <br>
+        Wavely and Broadway. <br><br>
+        
+        Collrective narratives on corners in New York <br>
+        Directed by Yu-Ting Feng
+  </p>
 </body>
 </html>
