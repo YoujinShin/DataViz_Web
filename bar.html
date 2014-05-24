@@ -1,0 +1,70 @@
+
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+
+<!-- script src="/js/d3.v3.min.js"></script> -->
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+<div id="svg-container"><svg></svg></div>
+
+<!-- <script src="/js/ukwind/lines.js"></script> -->
+<script>
+
+function lineAnimate(selection) {
+  selection
+  .attr({x1: 200, x2: 200})
+  .attr('y1', function(d) {return d;})
+  .attr('y2', function(d) {return d;})
+  .style('opacity', 0.5)
+  .transition()
+  .ease('linear')
+  .duration(1000)
+  .delay(function(d) {return d*10;})
+  .attr('x2', 500)
+  .transition()
+  .duration(1000)
+  .style('opacity', 0)
+  .each('end', function() {d3.select(this).call(lineAnimate)});
+}
+
+d3.select('svg')
+  .style({'width': '600px', 'height': '100px'})
+  .selectAll('line')
+  .data([30, 35, 40, 45, 50])
+  .enter()
+  .append('line')
+  .style({'stroke': '#777', 'stroke-width': '3px'})
+  .call(lineAnimate);
+
+</script>
+
+
+
+
+<!--     <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'prcweb'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div> -->
+
+  </body>
+</html>
